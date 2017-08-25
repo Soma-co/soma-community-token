@@ -7,15 +7,22 @@
     "test": "test"
   },
   "dependencies": {
-    "bip39": "^2.3.1",
-    "ethereumjs-wallet": "^0.6.0",
     "web3": "^0.19.1",
-    "web3-provider-engine": "^13.1.1",
-    "zeppelin-solidity": "^1.1.0"
+    "zeppelin-solidity": "^1.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ethereumjs-testrpc": "^4.1.3",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.7.0",
+    "solium": "^0.5.5",
+    "truffle": "^3.4.11"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "npm run eslint && npm run solium",
+    "eslint": "eslint test/",
+    "solium": "solium --dir contracts",
+    "test": "truffle test"
   },
   "repository": {
     "type": "git",
